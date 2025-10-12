@@ -4,11 +4,11 @@ domain: "Documentation & Knowledge Management"
 focus: "documentation"
 auto-activation-keywords: ["document", "README", "wiki", "guide", "manual", "docs", "changelog"]
 file-patterns: ["*.md", "*.rst", "docs/*", "README*", "CHANGELOG*"]
-commands: ["/gd:document", "/gd:explain", "/gd:finalize"]
+commands: ["/wd:document", "/wd:explain", "/wd:finalize"]
 mcp-servers: ["context7", "sequential", "magic"]
 ---
 
-# GoDev Docs Agent
+# WD Docs Agent
 
 ## Purpose
 Specialized agent for technical documentation creation, API documentation, knowledge base management, and multi-language documentation.
@@ -41,9 +41,9 @@ Specialized agent for technical documentation creation, API documentation, knowl
 - `*.yaml`, `*.json` - API specs
 
 ### Commands
-- `/gd:document` - Documentation generation
-- `/gd:explain` - Concept explanations
-- `/gd:finalize` - Documentation phase of finalization
+- `/wd:document` - Documentation generation
+- `/wd:explain` - Concept explanations
+- `/wd:finalize` - Documentation phase of finalization
 
 ## MCP Server Integration
 
@@ -140,20 +140,20 @@ Specialized agent for technical documentation creation, API documentation, knowl
 
 ### Documentation Creation
 ```bash
-/gd:document API-endpoints --format openapi
-/gd:document component-library --type guide
+/wd:document API-endpoints --format openapi
+/wd:document component-library --type guide
 ```
 
 ### Code Documentation
 ```bash
-/gd:document --type jsdoc --target src/
-/gd:explain authentication-flow --depth comprehensive
+/wd:document --type jsdoc --target src/
+/wd:explain authentication-flow --depth comprehensive
 ```
 
 ### Release Documentation
 ```bash
-/gd:document --type changelog --version 2.0.0
-/gd:finalize "Release 2.0.0" --skip-build
+/wd:document --type changelog --version 2.0.0
+/wd:finalize "Release 2.0.0" --skip-build
 ```
 
 ## Best Practices
@@ -309,7 +309,7 @@ const result = methodName(value1, value2);
 ```
 
 ## Related Agents
-- `gd-frontend-agent` - Component documentation
-- `gd-backend-agent` - API documentation
-- `gd-test-agent` - Test documentation
-- `gd-security-agent` - Security documentation
+- `wd-frontend-agent` - Component documentation
+- `wd-backend-agent` - API documentation
+- `wd-test-agent` - Test documentation
+- `wd-security-agent` - Security documentation

@@ -3,11 +3,11 @@ subagent-type: "qa-specialist"
 domain: "Quality Assurance & Testing"
 auto-activation-keywords: ["test", "testing", "E2E", "unit", "integration", "coverage", "quality", "benchmark"]
 file-patterns: ["*.test.*", "*.spec.*", "__tests__/*", "cypress/*", "playwright/*"]
-commands: ["/gd:test", "/gd:benchmark", "/gd:review --focus quality"]
+commands: ["/wd:test", "/wd:benchmark", "/wd:review --focus quality"]
 mcp-servers: ["playwright", "sequential", "context7"]
 ---
 
-# GoDev Test Agent
+# WD Test Agent
 
 ## Purpose
 Specialized agent for comprehensive testing strategy, test automation, quality assurance, and performance benchmarking.
@@ -40,9 +40,9 @@ Specialized agent for comprehensive testing strategy, test automation, quality a
 - `*.test.tsx`, `*.spec.tsx` - React component tests
 
 ### Commands
-- `/gd:test` - Test execution and strategy
-- `/gd:benchmark` - Performance benchmarking
-- `/gd:review --focus quality` - Quality review
+- `/wd:test` - Test execution and strategy
+- `/wd:benchmark` - Performance benchmarking
+- `/wd:review --focus quality` - Quality review
 
 ## MCP Server Integration
 
@@ -159,26 +159,26 @@ Specialized agent for comprehensive testing strategy, test automation, quality a
 
 ### Test Suite Creation
 ```bash
-/gd:test create --type unit --target UserService
-/gd:test create --type e2e --target login-flow
+/wd:test create --type unit --target UserService
+/wd:test create --type e2e --target login-flow
 ```
 
 ### Test Execution
 ```bash
-/gd:test run --type all
-/gd:test run --type e2e --browser chromium
+/wd:test run --type all
+/wd:test run --type e2e --browser chromium
 ```
 
 ### Coverage Analysis
 ```bash
-/gd:test coverage --threshold 80
-/gd:analyze test-coverage --depth deep
+/wd:test coverage --threshold 80
+/wd:analyze test-coverage --depth deep
 ```
 
 ### Performance Benchmarking
 ```bash
-/gd:benchmark API-endpoints
-/gd:benchmark --target homepage --metrics all
+/wd:benchmark API-endpoints
+/wd:benchmark --target homepage --metrics all
 ```
 
 ## Best Practices
@@ -255,7 +255,7 @@ Performance Testing:
 - **CI/CD Speed**: <15min total test suite execution
 
 ## Related Agents
-- `gd-frontend-agent` - UI component testing
-- `gd-backend-agent` - API testing
-- `gd-security-agent` - Security testing
-- `gd-docs-agent` - Test documentation
+- `wd-frontend-agent` - UI component testing
+- `wd-backend-agent` - API testing
+- `wd-security-agent` - Security testing
+- `wd-docs-agent` - Test documentation

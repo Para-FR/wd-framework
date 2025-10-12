@@ -4,11 +4,11 @@ domain: "Security Analysis & Hardening"
 focus: "security"
 auto-activation-keywords: ["security", "vulnerability", "authentication", "authorization", "audit", "compliance"]
 file-patterns: ["*auth*", "*security*", "*.pem", "*.key", "*middleware*"]
-commands: ["/gd:review --focus security", "/gd:analyze", "/gd:improve --security"]
+commands: ["/wd:review --focus security", "/wd:analyze", "/wd:improve --security"]
 mcp-servers: ["sequential", "context7", "playwright"]
 ---
 
-# GoDev Security Agent
+# WD Security Agent
 
 ## Purpose
 Specialized agent for security analysis, vulnerability assessment, threat modeling, and compliance validation.
@@ -41,9 +41,9 @@ Specialized agent for security analysis, vulnerability assessment, threat modeli
 - `*sanitize*` - Data sanitization
 
 ### Commands
-- `/gd:review --focus security` - Security-focused review
-- `/gd:analyze` - Security analysis
-- `/gd:improve --security` - Security hardening
+- `/wd:review --focus security` - Security-focused review
+- `/wd:analyze` - Security analysis
+- `/wd:improve --security` - Security hardening
 
 ## MCP Server Integration
 
@@ -134,20 +134,20 @@ Specialized agent for security analysis, vulnerability assessment, threat modeli
 
 ### Security Review
 ```bash
-/gd:review auth-system --focus security
-/gd:analyze --focus security --depth comprehensive
+/wd:review auth-system --focus security
+/wd:analyze --focus security --depth comprehensive
 ```
 
 ### Vulnerability Scanning
 ```bash
-/gd:analyze dependencies --focus security
-/gd:review API-endpoints --focus security
+/wd:analyze dependencies --focus security
+/wd:review API-endpoints --focus security
 ```
 
 ### Security Hardening
 ```bash
-/gd:improve authentication --security --validate
-/gd:improve data-handling --focus security
+/wd:improve authentication --security --validate
+/wd:improve data-handling --focus security
 ```
 
 ## Best Practices
@@ -225,7 +225,7 @@ Logging & Monitoring:
 - [ ] Incident response plan ready
 
 ## Related Agents
-- `gd-backend-agent` - Secure backend implementation
-- `gd-test-agent` - Security testing
-- `gd-docs-agent` - Security documentation
-- `gd-frontend-agent` - Frontend security (XSS, CSRF)
+- `wd-backend-agent` - Secure backend implementation
+- `wd-test-agent` - Security testing
+- `wd-docs-agent` - Security documentation
+- `wd-frontend-agent` - Frontend security (XSS, CSRF)

@@ -3,11 +3,11 @@ subagent-type: "backend-specialist"
 domain: "Server-Side Development"
 auto-activation-keywords: ["API", "database", "server", "endpoint", "authentication", "microservices"]
 file-patterns: ["*.js", "*.ts", "*.py", "*.go", "controllers/*", "models/*", "routes/*", "services/*"]
-commands: ["/gd:implement", "/gd:build", "/gd:test"]
+commands: ["/wd:implement", "/wd:build", "/wd:test"]
 mcp-servers: ["context7", "sequential", "playwright"]
 ---
 
-# GoDev Backend Agent
+# WD Backend Agent
 
 ## Purpose
 Specialized agent for server-side development, API design, database optimization, and secure backend systems.
@@ -40,10 +40,10 @@ Specialized agent for server-side development, API design, database optimization
 - `services/*`, `middleware/*` - Business logic
 
 ### Commands
-- `/gd:implement` - API/service implementation (backend context)
-- `/gd:build` - Backend build and compilation
-- `/gd:test` - API testing and validation
-- `/gd:improve --focus performance` - Backend optimization
+- `/wd:implement` - API/service implementation (backend context)
+- `/wd:build` - Backend build and compilation
+- `/wd:test` - API testing and validation
+- `/wd:improve --focus performance` - Backend optimization
 
 ## MCP Server Integration
 
@@ -141,20 +141,20 @@ Specialized agent for server-side development, API design, database optimization
 
 ### API Implementation
 ```bash
-/gd:implement user-authentication-api --type api --framework express
-/gd:implement graphql-schema-users --type api --framework apollo
+/wd:implement user-authentication-api --type api --framework express
+/wd:implement graphql-schema-users --type api --framework apollo
 ```
 
 ### Database Work
 ```bash
-/gd:implement database-schema-users --type service
-/gd:improve database-queries --focus performance
+/wd:implement database-schema-users --type service
+/wd:improve database-queries --focus performance
 ```
 
 ### Security Hardening
 ```bash
-/gd:analyze auth-system --focus security
-/gd:improve api-endpoints --focus security
+/wd:analyze auth-system --focus security
+/wd:improve api-endpoints --focus security
 ```
 
 ## Best Practices
@@ -201,7 +201,7 @@ Specialized agent for server-side development, API design, database optimization
 - **Recovery Time**: <5 minutes for critical services
 
 ## Related Agents
-- `gd-security-agent` - Security audits
-- `gd-test-agent` - API testing
-- `gd-frontend-agent` - API integration
-- `gd-docs-agent` - API documentation
+- `wd-security-agent` - Security audits
+- `wd-test-agent` - API testing
+- `wd-frontend-agent` - API integration
+- `wd-docs-agent` - API documentation

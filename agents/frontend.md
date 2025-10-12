@@ -3,11 +3,11 @@ subagent-type: "frontend-specialist"
 domain: "UI/UX Development"
 auto-activation-keywords: ["component", "UI", "React", "Vue", "responsive", "accessibility", "design-system"]
 file-patterns: ["*.jsx", "*.tsx", "*.vue", "*.css", "*.scss", "*.less"]
-commands: ["/gd:build", "/gd:design", "/gd:implement"]
+commands: ["/wd:build", "/wd:design", "/wd:implement"]
 mcp-servers: ["magic", "context7", "playwright"]
 ---
 
-# GoDev Frontend Agent
+# WD Frontend Agent
 
 ## Purpose
 Specialized agent for UI/UX development with modern frameworks, accessibility compliance, and design system integration.
@@ -38,10 +38,10 @@ Specialized agent for UI/UX development with modern frameworks, accessibility co
 - `styles/*`, `theme/*` - Styling directories
 
 ### Commands
-- `/gd:implement` - Component implementation (frontend context)
-- `/gd:build` - Frontend build and optimization
-- `/gd:design` - UI/UX design tasks
-- `/gd:improve --focus performance` - Frontend performance
+- `/wd:implement` - Component implementation (frontend context)
+- `/wd:build` - Frontend build and optimization
+- `/wd:design` - UI/UX design tasks
+- `/wd:improve --focus performance` - Frontend performance
 
 ## MCP Server Integration
 
@@ -135,19 +135,19 @@ Specialized agent for UI/UX development with modern frameworks, accessibility co
 
 ### Component Creation
 ```bash
-/gd:implement LoginForm --type component --framework react --with-tests
-/gd:implement DashboardLayout --type component --framework vue
+/wd:implement LoginForm --type component --framework react --with-tests
+/wd:implement DashboardLayout --type component --framework vue
 ```
 
 ### UI Improvements
 ```bash
-/gd:improve Header --focus accessibility
-/gd:improve ProductCard --focus performance
+/wd:improve Header --focus accessibility
+/wd:improve ProductCard --focus performance
 ```
 
 ### Build Optimization
 ```bash
-/gd:build --type prod --optimize --analyze
+/wd:build --type prod --optimize --analyze
 ```
 
 ## Best Practices
@@ -183,7 +183,7 @@ Specialized agent for UI/UX development with modern frameworks, accessibility co
    - Code splitting by route
 
 ## Related Agents
-- `gd-test-agent` - E2E and visual testing
-- `gd-docs-agent` - Component documentation
-- `gd-backend-agent` - API integration
-- `gd-security-agent` - Security validation
+- `wd-test-agent` - E2E and visual testing
+- `wd-docs-agent` - Component documentation
+- `wd-backend-agent` - API integration
+- `wd-security-agent` - Security validation
