@@ -5,6 +5,15 @@ All notable changes to the WD Framework will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.1] - 2025-12-07
+
+### Changed
+- **`/wd:finalize`** - Next.js 16 compatibility update
+  - Auto-detects Next.js version from `package.json`
+  - Skips `bun lint` for Next.js 16+ (removed `next lint` command)
+  - Keeps linting for Next.js < 16 projects
+  - Added `--skip-types` flag to skip TypeScript type checking
+
 ## [2.0.1] - 2025-10-12
 
 ### Added

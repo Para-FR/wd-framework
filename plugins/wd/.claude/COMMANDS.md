@@ -130,12 +130,14 @@ performance-profile: "optimization"
 - **Tool Orchestration**: [Bash, Read, Edit, TodoWrite]
 - **Workflow Pipeline**:
   1. Update documentation (.md files) with latest changes
-  2. Run `bun lint` for code quality validation
-  3. Run `bun type` for TypeScript type checking
-  4. Run `bun build` for compilation verification
-  5. Generate structured commit message if not provided
-  6. Git add, commit, and push if all gates pass
-- **Arguments**: `[commit-message]`, `--skip-docs`, `--skip-lint`, `--skip-build`, `--dry-run`, `--no-push`
+  2. Detect Next.js version from package.json
+  3. **If Next.js < 16**: Run `bun lint` for code quality validation
+  4. Run `bun type` for TypeScript type checking
+  5. Run `bun build` for compilation verification
+  6. Generate structured commit message if not provided
+  7. Git add, commit, and push if all gates pass
+- **Arguments**: `[commit-message]`, `--skip-docs`, `--skip-lint`, `--skip-types`, `--skip-build`, `--dry-run`, `--no-push`
+- **Note**: Next.js 16+ removed `next lint`. Auto-detects version and skips linting for Next.js 16+.
 
 **`/wd:estimate [target] [flags]`** - Evidence-based estimation | Auto-Persona: Analyzer, Architect | MCP: Sequential, Context7
 
