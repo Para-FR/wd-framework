@@ -4,54 +4,47 @@ Official marketplace for Web Development plugins - React, Next.js, Vue, TypeScri
 
 ## 🚀 Quick Start
 
-Install via Claude Code:
-
 ```bash
 /plugin marketplace add Para-FR/wd-framework
 ```
 
-Then restart Claude Code to activate the plugins.
+## 📦 WD Framework v2.2.0
 
-## 📦 Available Plugins
+Intelligent web development framework with **80% token optimization**.
 
-### WD Framework v2.0
+| Metric | Value |
+|--------|-------|
+| Commands | 22 |
+| Agents | 5 |
+| Personas | 11 |
+| MCP Servers | 4 |
+| Core Tokens | ~6K (was ~30K) |
 
-Intelligent web development framework with 22 specialized commands, 5 expert agents, and 11 AI personas.
-
-**Key Features:**
-- 22 specialized commands for web development
-- 5 expert agents (frontend, backend, security, test, docs)
-- 11 AI personas for domain-specific intelligence
-- Smart MCP coordination (Context7, Sequential, Magic, Playwright)
-- Auto-routing and wave orchestration
+### Key Features
+- **Token-Optimized**: 80% reduction through unified architecture
+- **Auto-Routing**: Intent detection → optimal agent/persona
+- **Wave Orchestration**: Multi-stage execution for complex tasks
+- **Quality Gates**: 8-step validation cycle
+- **Smart MCP**: Context7, Sequential, Magic, Playwright
 
 [📖 Full Documentation →](plugins/wd/README.md)
 
-## 📁 Repository Structure
+## 📁 Structure
 
 ```
 wd-framework/
-├── .claude-plugin/           # Marketplace configuration
-│   └── marketplace.json      # Plugin registry
-├── plugins/                  # Plugin implementations
-│   └── wd/                  # WD Framework plugin
-│       ├── .claude-plugin/  # Plugin metadata
-│       ├── agents/          # 5 specialized agents
-│       ├── commands/        # 22 slash commands
-│       ├── docs/            # Documentation
-│       ├── examples/        # Usage examples
-│       └── README.md        # Plugin documentation
-└── README.md                # This file
+├── plugins/wd/
+│   ├── .claude/          # 6 optimized core files (~24KB)
+│   ├── agents/           # 5 specialized agents
+│   ├── commands/         # 22 slash commands
+│   └── docs/             # Documentation
+└── README.md
 ```
 
 ## 🛠️ Technologies
 
-React, Next.js, Vue, Angular, TypeScript, Tailwind CSS, Node.js, Python, and more...
+React, Next.js, Vue, Angular, TypeScript, Tailwind CSS, Node.js, Python
 
 ## 📄 License
 
 MIT © Para CC-France
-
-## 🤝 Contributing
-
-Contributions are welcome! Please read the [plugin development guide](plugins/wd/docs/PLUGIN_DEVELOPMENT.md) for details.

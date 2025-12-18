@@ -1,6 +1,6 @@
-# WD Framework (Web Development) v2.0
+# WD Framework v2.2.0
 
-⚡ Intelligent web development framework with **22 specialized commands**, **5 expert agents**, **11 AI personas**, and complete orchestration system for Claude Code.
+⚡ Intelligent web development framework with **22 commands** | **5 agents** | **11 personas** | **4 MCP servers**
 
 ## 🚀 Installation
 
@@ -8,122 +8,108 @@
 /plugin marketplace add Para-FR/wd-framework
 ```
 
-Then restart Claude Code to activate the framework.
+## ✨ What's New in v2.2
 
-## ✨ What's New in v2.0
+### Token-Optimized Architecture
+- **80% token reduction** - From ~30K to ~6K tokens
+- **6 core files** instead of 10 (unified, no redundancy)
+- Same functionality, faster context loading
 
-### Intelligent Orchestration System
-- **Auto-Routing**: Automatically detects intent and routes to optimal agents
-- **Wave Orchestration**: Multi-stage execution for complex tasks (30-50% better results)
-- **11 AI Personas**: Specialized behaviors for different domains
-- **Smart MCP Coordination**: Context7, Sequential, Magic, Playwright
-- **Quality Gates**: 8-step validation cycle for production-ready code
-
-[📖 Read Full Orchestration Guide →](docs/ORCHESTRATION.md)
+### Core Files
+| File | Purpose | Size |
+|------|---------|------|
+| CLAUDE.md | Entry point | 1 KB |
+| CORE.md | Principles + Rules | 2.3 KB |
+| ROUTING.md | Orchestration + Wave | 4.8 KB |
+| CAPABILITIES.md | Personas + Agents + MCP | 5.7 KB |
+| COMMANDS.md | Command reference | 4.9 KB |
+| FLAGS.md | Flag reference | 4.9 KB |
 
 ## 📦 Commands (22)
 
-### Core Commands
-- `/wd:analyze` - Multi-dimensional code analysis
-- `/wd:implement` - Feature implementation with auto-persona
-- `/wd:build` - Project builder with framework detection
-- `/wd:improve` - Code quality improvements
-- `/wd:test` - Testing and QA workflows
-- `/wd:document` - Documentation generation
-- `/wd:troubleshoot` - Issue diagnosis and resolution
+### Development
+`/wd:build` | `/wd:implement` | `/wd:migrate` | `/wd:design`
 
-### Quality & Enhancement
-- `/wd:review` - Comprehensive code review (NEW)
-- `/wd:benchmark` - Performance testing (NEW)
-- `/wd:cleanup` - Code cleanup
-- `/wd:finalize` - Project finalization (NEW)
+### Analysis
+`/wd:analyze` | `/wd:troubleshoot` | `/wd:explain`
 
-### Planning & Design
-- `/wd:design` - System design
-- `/wd:brainstorm` - Structured idea generation (NEW)
-- `/wd:estimate` - Development estimation
-- `/wd:workflow` - Workflow generation
+### Quality
+`/wd:improve` | `/wd:cleanup` | `/wd:review`
 
-### Migration & Transformation
-- `/wd:migrate` - Framework migration assistant (NEW)
+### Testing
+`/wd:test` | `/wd:benchmark`
 
-### Utilities
-- `/wd:explain` - Code explanation
-- `/wd:git` - Git operations with smart commits
-- `/wd:index` - Project indexing
-- `/wd:load` - Context loading
-- `/wd:spawn` - Task orchestration
-- `/wd:task` - Long-term task management
+### Planning
+`/wd:brainstorm` | `/wd:estimate` | `/wd:workflow`
+
+### Workflow
+`/wd:finalize` | `/wd:git` | `/wd:document`
+
+### Meta
+`/wd:index` | `/wd:load` | `/wd:spawn` | `/wd:task`
 
 ## 🤖 Agents (5)
 
-Specialized sub-agents using Claude Code's native Task tool:
+| Agent | Domain | Primary MCP |
+|-------|--------|-------------|
+| wd-frontend-agent | UI/UX, React, Vue | Magic |
+| wd-backend-agent | APIs, databases | Context7 |
+| wd-security-agent | Vulnerability, compliance | Sequential |
+| wd-test-agent | E2E, QA | Playwright |
+| wd-docs-agent | Documentation | Context7 |
 
-- **wd-frontend-agent** - UI/UX, React, Vue, accessibility
-- **wd-backend-agent** - APIs, databases, microservices
-- **wd-security-agent** - Vulnerability assessment, compliance
-- **wd-test-agent** - E2E testing, quality assurance
-- **wd-docs-agent** - Documentation, knowledge management
+## 🧠 Personas (11)
 
-## 🧠 AI Personas (11)
+| Persona | Focus | Auto-Triggers |
+|---------|-------|---------------|
+| architect | Systems design | architecture, scalability |
+| frontend | UI/UX, a11y | component, responsive |
+| backend | Reliability, APIs | API, database, server |
+| security | Threat modeling | vulnerability, auth |
+| performance | Optimization | bottleneck, optimize |
+| analyzer | Root cause | analyze, investigate |
+| qa | Testing | test, quality |
+| refactorer | Code quality | refactor, cleanup |
+| devops | Infrastructure | deploy, CI/CD |
+| mentor | Knowledge transfer | explain, learn |
+| scribe | Documentation | document, write |
 
-Auto-activating specialized behaviors:
+## 🔧 MCP Integration
 
-- `--persona-architect` - Systems design
-- `--persona-frontend` - UI/UX specialist
-- `--persona-backend` - Reliability engineer
-- `--persona-security` - Threat modeling
-- `--persona-performance` - Optimization
-- `--persona-analyzer` - Root cause analysis
-- `--persona-qa` - Quality assurance
-- `--persona-refactorer` - Code quality
-- `--persona-devops` - Infrastructure
-- `--persona-mentor` - Knowledge transfer
-- `--persona-scribe` - Documentation
+| Server | Purpose | Flag |
+|--------|---------|------|
+| Context7 | Library docs, patterns | `--c7` |
+| Sequential | Complex analysis | `--seq` |
+| Magic | UI components | `--magic` |
+| Playwright | E2E testing | `--play` |
 
-## 🔧 MCP Server Integration
+## 🎯 Quick Examples
 
-Smart coordination of 4 MCP servers:
-- **Context7**: Library docs, best practices
-- **Sequential**: Complex analysis, debugging
-- **Magic**: UI component generation
-- **Playwright**: Browser automation, E2E testing
-
-## 🎯 Usage Examples
-
-### Auto-Activation (Recommended)
 ```bash
-# Automatically activates frontend persona + Magic MCP
+# Auto-activates frontend persona + Magic
 /wd:implement LoginComponent
 
-# Automatically activates security persona + Sequential MCP
+# Security review with agent
 /wd:review auth-system --focus security
+
+# Multi-agent coordination
+/wd:review --agents security,performance,quality
+
+# Wave orchestration for complex tasks
+/wd:improve legacy-code --wave-mode force
 ```
 
-### Multi-Agent Coordination
-```bash
-# Parallel agents for comprehensive review
-/wd:review --comprehensive --agents security,performance,quality
+## ⚡ Key Features
 
-# Full-stack feature with agent pipeline
-/wd:implement user-dashboard --agents frontend,backend,test,docs
-```
-
-### Wave Orchestration
-```bash
-# Multi-stage complex refactoring
-/wd:improve legacy-code --wave-mode force --wave-strategy systematic
-```
+- **Auto-Routing**: Intent detection → optimal agent/persona
+- **Wave Orchestration**: Multi-stage execution (complexity ≥0.7)
+- **Quality Gates**: 8-step validation cycle
+- **Smart Delegation**: Auto-delegate on >50 files or >7 dirs
 
 ## 📚 Documentation
 
-- **[ORCHESTRATION.md](docs/ORCHESTRATION.md)** - Complete orchestration guide
-- **[PLUGIN_DEVELOPMENT.md](docs/PLUGIN_DEVELOPMENT.md)** - Plugin development guide
-- **[DOCS_ANTHROPIC_REFERENCE.md](docs/DOCS_ANTHROPIC_REFERENCE.md)** - Anthropic API reference
-
-## 🛠️ Technologies
-
-React, Next.js, Vue, Angular, TypeScript, Tailwind CSS, Node.js, Python, and more...
+- [ORCHESTRATION.md](docs/ORCHESTRATION.md) - Complete guide
+- [PLUGIN_DEVELOPMENT.md](docs/PLUGIN_DEVELOPMENT.md) - Dev guide
 
 ## 📄 License
 

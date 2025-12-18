@@ -1,7 +1,7 @@
 {
   "name": "wd",
-  "version": "2.1.1",
-  "description": "Intelligent web development framework with 22 specialized commands, 5 expert agents, 11 AI personas, and complete orchestration system for React, Next.js, Vue, and more",
+  "version": "2.2.0",
+  "description": "Token-optimized web development framework (80% reduction) with 22 commands, 5 agents, 11 personas, 4 MCP servers",
   "author": {
     "name": "Para CC-France",
     "email": "contact@cc-france.org",
