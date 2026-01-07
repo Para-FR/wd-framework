@@ -3,14 +3,14 @@ allowed-tools: [Read, Grep, Glob, Bash, Write]
 description: "Load and analyze project context, configurations, and dependencies"
 ---
 
-# /gd:load - Project Context Loading
+# /wd:load - Project Context Loading
 
 ## Purpose
 Load and analyze project context, configurations, dependencies, and environment setup.
 
 ## Usage
 ```
-/gd:load [target] [--type project|config|deps|env] [--cache]
+/wd:load [target] [--type project|config|deps|env] [--cache]
 ```
 
 ## Arguments

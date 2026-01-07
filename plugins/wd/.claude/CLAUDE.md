@@ -7,6 +7,7 @@ AI Development Framework: 11 Personas | 5 Agents | 22 Commands | 4 MCP Servers
 @CAPABILITIES.md
 @COMMANDS.md
 @FLAGS.md
+@WORKFLOWS.md
 
 ## Quick Reference
 

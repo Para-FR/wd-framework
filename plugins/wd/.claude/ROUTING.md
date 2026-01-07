@@ -75,6 +75,43 @@ scoring:
 threshold: 0.7 (default) | --wave-threshold custom
 ```
 
+## Architecture Decision Records (ADR)
+
+### When to Create
+| Context | Trigger |
+|---------|---------|
+| API design | REST vs GraphQL, versioning |
+| Database | Schema design, normalization |
+| State | Redux vs Context vs Zustand |
+| Styling | CSS modules vs Tailwind vs CSS-in-JS |
+| Testing | Jest vs Vitest, E2E strategy |
+
+### ADR Format
+```markdown
+# ADR-XXX: [Title]
+## Context | ## Options Considered | ## Decision | ## Consequences
+```
+
+### Multi-Agent ADR Usage
+- Agents MUST consult existing ADRs before implementation
+- Prevents pattern conflicts in parallel execution
+- Location: `docs/decisions/` or `.adr/`
+
+## Development Tracks
+
+| Track | Phases | Use When |
+|-------|--------|----------|
+| Quick | Plan → Implement | Bug fixes, config, complexity <0.3 |
+| Standard | Analysis → Plan → Solution → Implement | Features, complexity 0.3-0.7 |
+| Enterprise | All + ADR + Adversarial review | Architecture, security, complexity >0.7 |
+
+### Track Selection
+```yaml
+quick: skip [analysis, solutioning] | trigger: complexity <0.3 OR single-file
+standard: all phases | trigger: complexity 0.3-0.7 (default)
+enterprise: +adr +adversarial-review +docs | trigger: complexity >0.7 OR security-critical
+```
+
 ## Agent Delegation
 
 **Trigger**: >7 directories OR >50 files OR complexity >0.8

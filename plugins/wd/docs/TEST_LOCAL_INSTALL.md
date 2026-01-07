@@ -92,7 +92,7 @@ Available Plugins:
 
 ### Step 5: Verify Commands Available
 ```bash
-/gd:analyze --help
+/wd:analyze --help
 ```
 
 **Expected Output:**
@@ -140,15 +140,15 @@ Installed Plugins:
 **Fix:**
 1. Check agent files have `subagent-type` in frontmatter
 2. Verify `auto-activation-keywords` match your context
-3. Try explicitly spawning: `/gd:spawn frontend`
+3. Try explicitly spawning: `/wd:spawn frontend`
 
 ## Success Criteria ✅
 
 - [ ] Marketplace added without errors
 - [ ] Plugin appears in `/plugin list`
 - [ ] Plugin installs successfully
-- [ ] All 17 commands available (test with `/gd:analyze --help`)
-- [ ] Agents can be spawned (test with `/gd:spawn frontend`)
+- [ ] All 17 commands available (test with `/wd:analyze --help`)
+- [ ] Agents can be spawned (test with `/wd:spawn frontend`)
 - [ ] Core framework files loaded (check with context)
 
 ## Next Steps

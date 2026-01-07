@@ -7,14 +7,14 @@ auto-persona: ["frontend", "backend", "architect", "devops"]
 mcp-servers: ["magic", "context7", "sequential"]
 ---
 
-# /gd:build - Project Building
+# /wd:build - Project Building
 
 ## Purpose
 Build, compile, and package projects with comprehensive error handling, optimization, and framework-specific intelligence.
 
 ## Usage
 ```bash
-/gd:build [target] [--type <type>] [--<flags>]
+/wd:build [target] [--type <type>] [--<flags>]
 ```
 
 ## Arguments
@@ -104,22 +104,22 @@ Build, compile, and package projects with comprehensive error handling, optimiza
 
 ```bash
 # Development build with watch mode
-/gd:build --type dev --watch
+/wd:build --type dev --watch
 
 # Production build with optimization
-/gd:build --type prod --optimize --clean
+/wd:build --type prod --optimize --clean
 
 # Analyze bundle size
-/gd:build --type prod --analyze
+/wd:build --type prod --analyze
 
 # Clean build without cache
-/gd:build --clean --no-cache
+/wd:build --clean --no-cache
 
 # Build specific target (monorepo)
-/gd:build @workspace/frontend --type prod
+/wd:build @workspace/frontend --type prod
 
 # Verbose build for debugging
-/gd:build --type dev --verbose
+/wd:build --type dev --verbose
 ```
 
 ## Build Optimizations
@@ -199,9 +199,9 @@ Build, compile, and package projects with comprehensive error handling, optimiza
 3. Bundle size exceeds recommended 250 KB threshold
 
 ## Next Steps
-- Run tests: `/gd:test`
-- Deploy build: `/gd:deploy`
-- Analyze performance: `/gd:benchmark`
+- Run tests: `/wd:test`
+- Deploy build: `/wd:deploy`
+- Analyze performance: `/wd:benchmark`
 ```
 
 ## Production Build Checklist
@@ -217,8 +217,8 @@ Build, compile, and package projects with comprehensive error handling, optimiza
 - [ ] Documentation updated
 
 ## Related Commands
-- `/gd:implement` - Implement new features before building
-- `/gd:test` - Run test suite
-- `/gd:improve --perf` - Optimize build performance
-- `/gd:analyze` - Analyze build configuration
-- `/gd:finalize` - Complete build + test + deploy workflow
+- `/wd:implement` - Implement new features before building
+- `/wd:test` - Run test suite
+- `/wd:improve --perf` - Optimize build performance
+- `/wd:analyze` - Analyze build configuration
+- `/wd:finalize` - Complete build + test + deploy workflow

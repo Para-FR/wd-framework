@@ -7,14 +7,14 @@ auto-persona: ["analyzer", "architect", "security"]
 mcp-servers: ["sequential", "context7", "magic"]
 ---
 
-# /gd:analyze - Comprehensive Analysis
+# /wd:analyze - Comprehensive Analysis
 
 ## Purpose
 Execute comprehensive code analysis across quality, security, performance, and architecture domains with intelligent persona activation and MCP integration.
 
 ## Usage
 ```bash
-/gd:analyze [target] [@<path>] [!<command>] [--<flags>]
+/wd:analyze [target] [@<path>] [!<command>] [--<flags>]
 ```
 
 ## Arguments
@@ -26,6 +26,8 @@ Execute comprehensive code analysis across quality, security, performance, and a
 - `--format text|json|report|markdown` - Output format
 - `--wave-mode auto|force|off` - Wave orchestration control
 - `--delegate files|folders|auto` - Sub-agent delegation strategy
+- `--sharding auto|full|selective|index` - Document loading strategy
+- `--facilitation` - Enable guided discovery mode
 
 ## Auto-Activation Patterns
 
@@ -72,17 +74,32 @@ Execute comprehensive code analysis across quality, security, performance, and a
 
 ```bash
 # Quick security analysis
-/gd:analyze auth-module --focus security --depth quick
+/wd:analyze auth-module --focus security --depth quick
 
 # Comprehensive system analysis with wave mode
-/gd:analyze @src/ --depth comprehensive --wave-mode force
+/wd:analyze @src/ --depth comprehensive --wave-mode force
 
 # Performance bottleneck analysis
-/gd:analyze --focus performance --delegate auto
+/wd:analyze --focus performance --delegate auto
 
 # Multi-domain analysis with custom format
-/gd:analyze entire-project --format report --depth deep
+/wd:analyze entire-project --format report --depth deep
 ```
+
+## Document Sharding
+
+For large codebases (>50 files):
+
+| Strategy | File Size | Approach |
+|----------|-----------|----------|
+| FULL_LOAD | <5KB | Load entirely |
+| SELECTIVE_LOAD | 5-50KB | Load relevant sections |
+| INDEX_GUIDED | >50KB | Index first, load on-demand |
+
+### Auto-Trigger
+- File count >50: enable INDEX_GUIDED
+- `--sharding auto`: intelligent selection
+- ~90% token reduction vs. full load
 
 ## Integration Features
 
@@ -90,6 +107,7 @@ Execute comprehensive code analysis across quality, security, performance, and a
 - **Evidence-Based**: All findings backed by code references
 - **Actionable**: Clear next steps with effort estimates
 - **Contextual**: Adapts to project type and technology stack
+- **Sharding**: Efficient large codebase handling
 
 ## Output Structure
 
@@ -129,7 +147,7 @@ Execute comprehensive code analysis across quality, security, performance, and a
 ```
 
 ## Related Commands
-- `/gd:improve` - Apply recommended improvements
-- `/gd:review` - Comprehensive code review
-- `/gd:troubleshoot` - Debug specific issues
-- `/gd:estimate` - Estimate implementation effort
+- `/wd:improve` - Apply recommended improvements
+- `/wd:review` - Comprehensive code review
+- `/wd:troubleshoot` - Debug specific issues
+- `/wd:estimate` - Estimate implementation effort

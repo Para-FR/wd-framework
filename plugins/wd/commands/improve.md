@@ -3,14 +3,14 @@ allowed-tools: [Read, Grep, Glob, Edit, MultiEdit, TodoWrite]
 description: "Apply systematic improvements to code quality, performance, and maintainability"
 ---
 
-# /gd:improve - Code Improvement
+# /wd:improve - Code Improvement
 
 ## Purpose
 Apply systematic improvements to code quality, performance, maintainability, and best practices.
 
 ## Usage
 ```
-/gd:improve [target] [--type quality|performance|maintainability|style] [--safe]
+/wd:improve [target] [--type quality|performance|maintainability|style] [--safe]
 ```
 
 ## Arguments

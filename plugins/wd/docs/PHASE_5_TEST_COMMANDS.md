@@ -70,7 +70,7 @@ Available Plugins:
 
 ### Étape 5: Vérifier qu'une Commande Fonctionne
 ```bash
-/gd:analyze --help
+/wd:analyze --help
 ```
 
 **Résultat Attendu:**
@@ -80,7 +80,7 @@ Affichage de l'aide de la commande avec description, usage, arguments, etc.
 
 ### Étape 6: Tester un Agent
 ```bash
-/gd:spawn frontend
+/wd:spawn frontend
 ```
 
 **Résultat Attendu:**

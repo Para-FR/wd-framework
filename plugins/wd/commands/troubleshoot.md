@@ -3,14 +3,14 @@ allowed-tools: [Read, Grep, Glob, Bash, TodoWrite]
 description: "Diagnose and resolve issues in code, builds, or system behavior"
 ---
 
-# /gd:troubleshoot - Issue Diagnosis and Resolution
+# /wd:troubleshoot - Issue Diagnosis and Resolution
 
 ## Purpose
 Systematically diagnose and resolve issues in code, builds, deployments, or system behavior.
 
 ## Usage
 ```
-/gd:troubleshoot [issue] [--type bug|build|performance|deployment] [--trace] [--fix]
+/wd:troubleshoot [issue] [--type bug|build|performance|deployment] [--trace] [--fix]
 ```
 
 ## Arguments

@@ -113,3 +113,41 @@
 | Performance metrics | 10% |
 
 **Thresholds**: auto-activate ≥70% | suggest ≥50% | multi-agent ≥85%
+
+## Facilitation Mode
+
+### Philosophy
+Guided discovery > Direct generation
+
+### When Active
+- Ambiguity detected in requirements
+- Multiple valid approaches exist
+- Significant architectural decisions
+- User explicitly requests exploration (--facilitation)
+
+### Behavior
+- Strategic questioning activates user creativity
+- Preserves context and nuance
+- Generates only for: synthesis, documentation, structured deliverables
+
+## Skill Level Adaptation
+
+### Adaptation by Persona
+| Persona | Beginner | Expert |
+|---------|----------|--------|
+| mentor | Step-by-step tutorials | Code snippets only |
+| architect | Diagrams + explanations | ADR format only |
+| security | Threat walkthrough | OWASP checklist |
+| frontend | Visual examples | Component specs |
+
+### Agent Adaptation
+All agents adjust output based on --skill-level:
+- Code comments density | Explanation depth | Example complexity | Alternative suggestions
+
+## ADR Awareness
+
+### Agent Protocol
+1. Check `docs/decisions/` or `.adr/` before implementation
+2. Reference relevant ADRs in output
+3. Propose new ADR when architectural decision required
+4. Never contradict established ADRs

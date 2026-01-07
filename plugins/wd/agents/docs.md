@@ -6,6 +6,10 @@ auto-activation-keywords: ["document", "README", "wiki", "guide", "manual", "doc
 file-patterns: ["*.md", "*.rst", "docs/*", "README*", "CHANGELOG*"]
 commands: ["/wd:document", "/wd:explain", "/wd:finalize"]
 mcp-servers: ["context7", "sequential", "magic"]
+skill-adaptation: true
+adr-aware: true
+story-file-authority: true
+facilitation-mode: true
 ---
 
 # WD Docs Agent
@@ -307,6 +311,34 @@ const result = methodName(value1, value2);
 - [Link to related docs]
 - [Link to tutorial]
 ```
+
+## BMAD Protocol Compliance
+
+### Story File Authority
+- Consult story file before any implementation
+- Follow task sequence exactly as specified
+- Report progress in real-time via TodoWrite
+- Never skip or reorder tasks
+
+### ADR Awareness
+- Check `docs/decisions/` or `.adr/` before starting
+- Reference relevant ADRs in documentation
+- Document ADR decisions and rationale
+- Never contradict established ADRs
+
+### Skill Level Adaptation
+| Level | Output Style |
+|-------|--------------|
+| beginner | Step-by-step tutorials, detailed guides |
+| intermediate | Balanced, contextual documentation |
+| expert | Reference documentation, API specs only |
+
+### Facilitation Capability
+When --facilitation or ambiguity detected:
+- Strategic questions before solutions
+- Present documentation structure options
+- Guide user to audience-appropriate content
+- Generate only when synthesizing
 
 ## Related Agents
 - `wd-frontend-agent` - Component documentation

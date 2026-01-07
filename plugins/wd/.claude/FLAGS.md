@@ -30,6 +30,37 @@
 | --safe-mode | Max validation, conservative | Resources >85%, production |
 | --verbose | Max detail | Manual only |
 
+## Skill & Execution Mode
+
+| Flag | Effect | Auto-Trigger |
+|------|--------|--------------|
+| --skill-level [level] | beginner\|intermediate\|expert | User preference |
+| --yolo | Automated execution, minimal checkpoints | Manual only |
+| --guided | Facilitation mode, strategic questions | Default |
+| --strict | Validation at every step | Security ops |
+
+### Skill Level Behavior
+| Level | Explanations | Examples | Comments |
+|-------|--------------|----------|----------|
+| beginner | Detailed, why > what | Extended | Verbose |
+| intermediate | Balanced | Relevant | Moderate |
+| expert | Minimal | Code-only | None |
+
+## Track Control
+
+| Flag | Effect | Auto-Trigger |
+|------|--------|--------------|
+| --track quick | Skip analysis/solutioning | complexity <0.3 |
+| --track standard | All phases | Default |
+| --track enterprise | Extended reviews + ADRs | complexity >0.7 |
+
+## Facilitation Mode
+
+| Flag | Effect |
+|------|--------|
+| --facilitation | Enable guided discovery over generation |
+| --discovery | Question-first approach before solutions |
+
 ## MCP Control
 
 | Flag | Server | Auto-Trigger |
@@ -115,6 +146,16 @@ Large codebase → --uc + --delegate auto
 Testing → --persona-qa --play --validate
 DevOps → --persona-devops --safe-mode --validate
 Refactoring → --persona-refactorer --wave-strategy systematic
+
+# Skill-Based
+new user detected → --skill-level beginner
+repeated similar tasks → --skill-level expert
+educational context → --skill-level beginner --guided
+
+# Track-Based
+single file change → --track quick
+multi-file feature → --track standard
+architecture/security → --track enterprise
 
 # Scale-Based
 dirs >7 → --delegate --parallel-dirs

@@ -30,39 +30,39 @@ Installed Plugins:
 ### Commandes Principales
 ```bash
 # Analyse de code
-/gd:analyze
+/wd:analyze
 
 # Implémentation de features
-/gd:implement
+/wd:implement
 
 # Build de projet
-/gd:build
+/wd:build
 
 # Amélioration de code
-/gd:improve
+/wd:improve
 
 # Tests
-/gd:test
+/wd:test
 ```
 
 ### Toutes les Commandes (17)
-- `/gd:analyze` - Multi-dimensional code analysis
-- `/gd:implement` - Feature implementation
-- `/gd:build` - Project builder with framework detection
-- `/gd:improve` - Code quality improvements
-- `/gd:test` - Testing and QA
-- `/gd:document` - Documentation generation
-- `/gd:troubleshoot` - Issue diagnosis
-- `/gd:cleanup` - Code cleanup
-- `/gd:design` - System design
-- `/gd:estimate` - Development estimation
-- `/gd:explain` - Code explanation
-- `/gd:git` - Git operations
-- `/gd:index` - Project indexing
-- `/gd:load` - Context loading
-- `/gd:spawn` - Task orchestration
-- `/gd:task` - Task management
-- `/gd:workflow` - Workflow generation
+- `/wd:analyze` - Multi-dimensional code analysis
+- `/wd:implement` - Feature implementation
+- `/wd:build` - Project builder with framework detection
+- `/wd:improve` - Code quality improvements
+- `/wd:test` - Testing and QA
+- `/wd:document` - Documentation generation
+- `/wd:troubleshoot` - Issue diagnosis
+- `/wd:cleanup` - Code cleanup
+- `/wd:design` - System design
+- `/wd:estimate` - Development estimation
+- `/wd:explain` - Code explanation
+- `/wd:git` - Git operations
+- `/wd:index` - Project indexing
+- `/wd:load` - Context loading
+- `/wd:spawn` - Task orchestration
+- `/wd:task` - Task management
+- `/wd:workflow` - Workflow generation
 
 ### Agents (5)
 - `frontend` - UI/UX development
@@ -75,7 +75,7 @@ Installed Plugins:
 
 Les commandes apparaissent maintenant comme:
 ```
-/gd:analyze    Multi-dimensional code and system analysis
+/wd:analyze    Multi-dimensional code and system analysis
                (plugin:gd@gd-marketplace)
 ```
 
@@ -114,7 +114,7 @@ git config --global url."https://github.com/".insteadOf git@github.com:
 ## 🎉 Succès!
 
 Si tout fonctionne, vous devriez voir:
-- ✅ 17 commandes `/gd:*` disponibles
+- ✅ 17 commandes `/wd:*` disponibles
 - ✅ 5 agents activables
 - ✅ Format propre dans l'autocomplétion
 - ✅ Plugin affiché comme `gd@gd-marketplace`

@@ -8,26 +8,27 @@ personas: [architect, analyzer, frontend, backend, security, devops, project-man
 mcp-servers: [sequential, context7, magic]
 ---
 
-# /gd:workflow - Implementation Workflow Generator
+# /wd:workflow - Implementation Workflow Generator
 
 ## Purpose
 Analyze Product Requirements Documents (PRDs) and feature specifications to generate comprehensive, step-by-step implementation workflows with expert guidance, dependency mapping, and automated task orchestration.
 
 ## Usage
 ```
-/gd:workflow [prd-file|feature-description] [--persona expert] [--c7] [--sequential] [--strategy systematic|agile|mvp] [--output roadmap|tasks|detailed]
+/wd:workflow [prd-file|feature-description] [--persona expert] [--c7] [--sequential] [--strategy systematic|agile|mvp] [--output roadmap|tasks|detailed]
 ```
 
 ## Arguments
 - `prd-file|feature-description` - Path to PRD file or direct feature description
 - `--persona` - Force specific expert persona (architect, frontend, backend, security, devops, etc.)
 - `--strategy` - Workflow strategy (systematic, agile, mvp)
-- `--output` - Output format (roadmap, tasks, detailed)
+- `--output` - Output format (roadmap, tasks, detailed, story, adr)
 - `--estimate` - Include time and complexity estimates
 - `--dependencies` - Map external dependencies and integrations
 - `--risks` - Include risk assessment and mitigation strategies
 - `--parallel` - Identify parallelizable work streams
 - `--milestones` - Create milestone-based project phases
+- `--track quick|standard|enterprise` - Development track selection
 
 ## MCP Integration Flags
 - `--c7` / `--context7` - Enable Context7 for framework patterns and best practices
@@ -154,16 +155,16 @@ Analyze Product Requirements Documents (PRDs) and feature specifications to gene
 1. **Setup API endpoint** (1 hour)
    - Create POST /api/register route
    - Add input validation middleware
-   
+
 2. **Database integration** (2 hours)
    - Implement user model
    - Add password hashing
-   
+
 3. **Security measures** (3 hours)
    - Rate limiting implementation
    - Input sanitization
    - SQL injection prevention
-   
+
 4. **Testing** (2 hours)
    - Unit tests for registration logic
    - Integration tests for API endpoint
@@ -173,6 +174,55 @@ Analyze Product Requirements Documents (PRDs) and feature specifications to gene
 - [ ] Passwords are properly hashed
 - [ ] Email validation is enforced
 - [ ] Rate limiting prevents abuse
+```
+
+### Story Format (`--output story`)
+```
+# Story: User Authentication System
+
+## Context
+Implement secure user authentication with email/password and social login options.
+
+## Tasks
+1. [ ] Design authentication flow architecture
+2. [ ] Implement user registration API
+3. [ ] Create login/logout endpoints
+4. [ ] Add password reset functionality
+5. [ ] Integrate social login providers
+6. [ ] Write comprehensive tests
+
+## Acceptance Criteria
+- [ ] Users can register with email/password
+- [ ] OAuth2 integration working
+- [ ] 95% test coverage achieved
+
+## ADR References
+- ADR-001: Authentication Strategy
+- ADR-002: Password Hashing Algorithm
+```
+
+### ADR Format (`--output adr`)
+```
+# ADR-XXX: [Decision Title]
+
+## Context
+[Why this decision is needed - background and constraints]
+
+## Options Considered
+1. **Option A** - advantages/disadvantages
+2. **Option B** - advantages/disadvantages
+3. **Option C** - advantages/disadvantages
+
+## Decision
+[Selected approach and rationale]
+
+## Consequences
+- Positive: [benefits]
+- Negative: [trade-offs accepted]
+- Neutral: [implications]
+
+## Status
+Proposed | Accepted | Deprecated | Superseded by ADR-YYY
 ```
 
 ## Advanced Features
@@ -206,17 +256,17 @@ Analyze Product Requirements Documents (PRDs) and feature specifications to gene
 - Links workflow phases to actionable development tasks
 
 ### Task Command Integration
-- Converts workflow into hierarchical project tasks (`/gd:task`)
+- Converts workflow into hierarchical project tasks (`/wd:task`)
 - Enables cross-session persistence and progress tracking
-- Supports complex orchestration with `/gd:spawn`
+- Supports complex orchestration with `/wd:spawn`
 
 ### Implementation Command Integration
-- Seamlessly connects to `/gd:implement` for feature development
+- Seamlessly connects to `/wd:implement` for feature development
 - Provides context-aware implementation guidance
 - Auto-activates appropriate personas for each workflow phase
 
 ### Analysis Command Integration
-- Leverages `/gd:analyze` for codebase assessment
+- Leverages `/wd:analyze` for codebase assessment
 - Integrates existing code patterns into workflow planning
 - Identifies refactoring opportunities and technical debt
 
@@ -224,27 +274,27 @@ Analyze Product Requirements Documents (PRDs) and feature specifications to gene
 
 ### Generate Workflow from PRD File
 ```
-/gd:workflow docs/feature-100-prd.md --strategy systematic --c7 --sequential --estimate
+/wd:workflow docs/feature-100-prd.md --strategy systematic --c7 --sequential --estimate
 ```
 
 ### Create Frontend-Focused Workflow
 ```
-/gd:workflow "User dashboard with real-time analytics" --persona frontend --magic --output detailed
+/wd:workflow "User dashboard with real-time analytics" --persona frontend --magic --output detailed
 ```
 
 ### MVP Planning with Risk Assessment
 ```
-/gd:workflow user-authentication-system --strategy mvp --risks --parallel --milestones
+/wd:workflow user-authentication-system --strategy mvp --risks --parallel --milestones
 ```
 
 ### Backend API Workflow with Dependencies
 ```
-/gd:workflow payment-processing-api --persona backend --dependencies --c7 --output tasks
+/wd:workflow payment-processing-api --persona backend --dependencies --c7 --output tasks
 ```
 
 ### Full-Stack Feature Workflow
 ```
-/gd:workflow social-media-integration --all-mcp --sequential --parallel --estimate --output roadmap
+/wd:workflow social-media-integration --all-mcp --sequential --parallel --estimate --output roadmap
 ```
 
 ## Quality Gates and Validation

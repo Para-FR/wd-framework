@@ -3,14 +3,14 @@ allowed-tools: [Read, Grep, Glob, Bash]
 description: "Provide clear explanations of code, concepts, or system behavior"
 ---
 
-# /gd:explain - Code and Concept Explanation
+# /wd:explain - Code and Concept Explanation
 
 ## Purpose
 Deliver clear, comprehensive explanations of code functionality, concepts, or system behavior.
 
 ## Usage
 ```
-/gd:explain [target] [--level basic|intermediate|advanced] [--format text|diagram|examples]
+/wd:explain [target] [--level basic|intermediate|advanced] [--format text|diagram|examples]
 ```
 
 ## Arguments

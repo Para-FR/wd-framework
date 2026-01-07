@@ -3,14 +3,14 @@ allowed-tools: [Read, Grep, Glob, Bash, Write]
 description: "Generate comprehensive project documentation and knowledge base"
 ---
 
-# /gd:index - Project Documentation
+# /wd:index - Project Documentation
 
 ## Purpose
 Create and maintain comprehensive project documentation, indexes, and knowledge bases.
 
 ## Usage
 ```
-/gd:index [target] [--type docs|api|structure|readme] [--format md|json|yaml]
+/wd:index [target] [--type docs|api|structure|readme] [--format md|json|yaml]
 ```
 
 ## Arguments

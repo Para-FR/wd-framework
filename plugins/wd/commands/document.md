@@ -3,14 +3,14 @@ allowed-tools: [Read, Grep, Glob, Write, Edit]
 description: "Create focused documentation for specific components or features"
 ---
 
-# /gd:document - Focused Documentation
+# /wd:document - Focused Documentation
 
 ## Purpose
 Generate precise, focused documentation for specific components, functions, or features.
 
 ## Usage
 ```
-/gd:document [target] [--type inline|external|api|guide] [--style brief|detailed]
+/wd:document [target] [--type inline|external|api|guide] [--style brief|detailed]
 ```
 
 ## Arguments

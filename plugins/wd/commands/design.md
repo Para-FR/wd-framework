@@ -3,14 +3,14 @@ allowed-tools: [Read, Grep, Glob, Write, Edit, TodoWrite]
 description: "Design system architecture, APIs, and component interfaces"
 ---
 
-# /gd:design - System and Component Design
+# /wd:design - System and Component Design
 
 ## Purpose
 Design system architecture, APIs, component interfaces, and technical specifications.
 
 ## Usage
 ```
-/gd:design [target] [--type architecture|api|component|database] [--format diagram|spec|code]
+/wd:design [target] [--type architecture|api|component|database] [--format diagram|spec|code]
 ```
 
 ## Arguments

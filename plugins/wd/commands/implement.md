@@ -7,14 +7,14 @@ auto-persona: ["frontend", "backend", "architect", "security"]
 mcp-servers: ["magic", "context7", "sequential"]
 ---
 
-# /gd:implement - Feature Implementation
+# /wd:implement - Feature Implementation
 
 ## Purpose
 Implement features, components, and code functionality with intelligent expert activation, comprehensive development support, and best practices enforcement.
 
 ## Usage
 ```bash
-/gd:implement [feature-description] [--type <type>] [--framework <name>] [--<flags>]
+/wd:implement [feature-description] [--type <type>] [--framework <name>] [--<flags>]
 ```
 
 ## Arguments
@@ -27,6 +27,10 @@ Implement features, components, and code functionality with intelligent expert a
 - `--documentation` - Generate documentation alongside code
 - `--agent <agent-name>` - Manually activate specific agent
 - `--agents <agent-list>` - Activate multiple coordinated agents
+- `--track quick|standard|enterprise` - Development track selection
+- `--skill-level beginner|intermediate|expert` - Output verbosity
+- `--yolo` - Automated execution mode
+- `--story <file>` - Use story file as source of truth
 
 ## Auto-Activation Patterns
 
@@ -86,23 +90,49 @@ Implement features, components, and code functionality with intelligent expert a
    - Provide usage examples
    - Suggest testing and integration steps
 
+## BMAD Protocol
+
+### Story File Discovery
+1. Check for `.story.md` or `story.md` in project root
+2. If found, use as single source of truth
+3. Execute tasks in story-defined sequence
+
+### ADR Consultation
+1. Scan `docs/decisions/` or `.adr/` directory
+2. Load relevant ADRs based on implementation domain
+3. Reference decisions in code comments
+
+### Track-Aware Execution
+| Track | Phases |
+|-------|--------|
+| quick | Implement only |
+| standard | Analyze → Plan → Implement → Validate |
+| enterprise | + ADR creation + Adversarial review |
+
+### Skill Level Output
+| Level | Behavior |
+|-------|----------|
+| beginner | Detailed explanations, extensive comments |
+| intermediate | Balanced context (default) |
+| expert | Code-first, minimal commentary |
+
 ## Examples
 
 ```bash
 # Frontend component with tests
-/gd:implement LoginComponent --type component --framework react --with-tests
+/wd:implement LoginComponent --type component --framework react --with-tests
 
 # Backend API with documentation
-/gd:implement user-authentication-system --type feature --documentation
+/wd:implement user-authentication-system --type feature --documentation
 
 # Multi-agent full-stack feature
-/gd:implement user-dashboard --agents frontend,backend,test,docs
+/wd:implement user-dashboard --agents frontend,backend,test,docs
 
 # Safe iterative implementation
-/gd:implement payment-processing-service --type service --safe --iterative
+/wd:implement payment-processing-service --type service --safe --iterative
 
 # Explicit agent selection
-/gd:implement REST-API-users --type api --agent gd-backend-agent
+/wd:implement REST-API-users --type api --agent gd-backend-agent
 ```
 
 ## Integration Features
@@ -190,8 +220,8 @@ Implement features, components, and code functionality with intelligent expert a
 - Performance testing
 
 ## Related Commands
-- `/gd:build` - Build and compile project
-- `/gd:test` - Run test suite
-- `/gd:improve` - Enhance existing implementation
-- `/gd:review` - Code review before merge
-- `/gd:document` - Generate documentation
+- `/wd:build` - Build and compile project
+- `/wd:test` - Run test suite
+- `/wd:improve` - Enhance existing implementation
+- `/wd:review` - Code review before merge
+- `/wd:document` - Generate documentation

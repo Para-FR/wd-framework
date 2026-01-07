@@ -1,6 +1,8 @@
-# WD Framework v2.2.0
+# WD Framework v2.3.0
 
 ⚡ Intelligent web development framework with **22 commands** | **5 agents** | **11 personas** | **4 MCP servers**
+
+Inspired by [BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) patterns for AI-assisted development.
 
 ## 🚀 Installation
 
@@ -8,22 +10,28 @@
 /plugin marketplace add Para-FR/wd-framework
 ```
 
-## ✨ What's New in v2.2
+## ✨ What's New in v2.3
 
-### Token-Optimized Architecture
-- **80% token reduction** - From ~30K to ~6K tokens
-- **6 core files** instead of 10 (unified, no redundancy)
-- Same functionality, faster context loading
+### BMAD-METHOD Integration
+- **Progressive Disclosure** - Step-by-step workflows, no skipping
+- **Story File Authority** - Single source of truth for task execution
+- **ADR Pattern** - Architecture Decision Records for multi-agent consistency
+- **Development Tracks** - Quick/Standard/Enterprise workflow selection
+- **Skill Level Adaptation** - Beginner/Intermediate/Expert output modes
+- **YOLO Mode** - Automated execution with minimal checkpoints
+- **Facilitation Mode** - Guided discovery over direct generation
+- **Document Sharding** - ~90% token reduction for large codebases
 
-### Core Files
+### Core Files (7)
 | File | Purpose | Size |
 |------|---------|------|
 | CLAUDE.md | Entry point | 1 KB |
-| CORE.md | Principles + Rules | 2.3 KB |
-| ROUTING.md | Orchestration + Wave | 4.8 KB |
-| CAPABILITIES.md | Personas + Agents + MCP | 5.7 KB |
+| CORE.md | Principles + Rules | 3 KB |
+| ROUTING.md | Orchestration + Wave + ADR + Tracks | 6 KB |
+| CAPABILITIES.md | Personas + Agents + MCP + Facilitation | 6.8 KB |
 | COMMANDS.md | Command reference | 4.9 KB |
-| FLAGS.md | Flag reference | 4.9 KB |
+| FLAGS.md | Flag reference + Skill/Track/YOLO | 6.3 KB |
+| WORKFLOWS.md | Story File + Sharding + Adversarial Review | 2.8 KB |
 
 ## 📦 Commands (22)
 
@@ -99,12 +107,33 @@
 /wd:improve legacy-code --wave-mode force
 ```
 
+## 🆕 New Flags (v2.3)
+
+```bash
+# Skill Level
+--skill-level beginner|intermediate|expert
+
+# Development Tracks
+--track quick|standard|enterprise
+
+# Execution Modes
+--yolo                  # Automated execution
+--facilitation          # Guided discovery mode
+
+# Document Sharding
+--sharding auto|full|selective|index
+
+# Output Formats
+--output story|adr      # Generate story files or ADRs
+```
+
 ## ⚡ Key Features
 
 - **Auto-Routing**: Intent detection → optimal agent/persona
 - **Wave Orchestration**: Multi-stage execution (complexity ≥0.7)
 - **Quality Gates**: 8-step validation cycle
 - **Smart Delegation**: Auto-delegate on >50 files or >7 dirs
+- **BMAD Protocol**: Story files, ADRs, progressive disclosure
 
 ## 📚 Documentation
 

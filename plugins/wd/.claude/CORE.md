@@ -52,6 +52,32 @@
 - L3: /spawn (complex orchestration)
 - L4: /loop (iterative refinement)
 
+## Progressive Disclosure
+
+### Workflow Execution
+- Step-by-step: step-01 → step-02 → step-N (no skip/optimization)
+- Checkpoint gates require confirmation before progression
+- Session continuity via frontmatter tracking
+- Context accumulation across steps
+
+### Story File Pattern (Single Source of Truth)
+Story file defines: task sequence (authoritative) | acceptance criteria | constraints | ADR refs
+
+**Rules**:
+1. Read ENTIRE story file before implementing
+2. Execute tasks in SPECIFIED order
+3. NEVER proceed with failing tests
+4. NEVER lie about test status
+
+### Session Frontmatter
+```yaml
+workflow: /wd:implement
+current_step: 3
+total_steps: 7
+status: in_progress
+context: ["files_read", "patterns_identified"]
+```
+
 ## Decision Framework
 
 **Priority**: Safety > correctness > performance > convenience

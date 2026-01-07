@@ -3,14 +3,14 @@ allowed-tools: [Read, Grep, Glob, Bash, Edit, MultiEdit]
 description: "Clean up code, remove dead code, and optimize project structure"
 ---
 
-# /gd:cleanup - Code and Project Cleanup
+# /wd:cleanup - Code and Project Cleanup
 
 ## Purpose
 Systematically clean up code, remove dead code, optimize imports, and improve project structure.
 
 ## Usage
 ```
-/gd:cleanup [target] [--type code|imports|files|all] [--safe|--aggressive]
+/wd:cleanup [target] [--type code|imports|files|all] [--safe|--aggressive]
 ```
 
 ## Arguments

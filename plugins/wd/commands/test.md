@@ -3,14 +3,14 @@ allowed-tools: [Read, Bash, Glob, TodoWrite, Edit, Write]
 description: "Execute tests, generate test reports, and maintain test coverage"
 ---
 
-# /gd:test - Testing and Quality Assurance
+# /wd:test - Testing and Quality Assurance
 
 ## Purpose
 Execute tests, generate comprehensive test reports, and maintain test coverage standards.
 
 ## Usage
 ```
-/gd:test [target] [--type unit|integration|e2e|all] [--coverage] [--watch]
+/wd:test [target] [--type unit|integration|e2e|all] [--coverage] [--watch]
 ```
 
 ## Arguments

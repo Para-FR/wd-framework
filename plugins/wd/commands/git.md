@@ -3,14 +3,14 @@ allowed-tools: [Bash, Read, Glob, TodoWrite, Edit]
 description: "Git operations with intelligent commit messages and branch management"
 ---
 
-# /gd:git - Git Operations
+# /wd:git - Git Operations
 
 ## Purpose
 Execute Git operations with intelligent commit messages, branch management, and workflow optimization.
 
 ## Usage
 ```
-/gd:git [operation] [args] [--smart-commit] [--branch-strategy]
+/wd:git [operation] [args] [--smart-commit] [--branch-strategy]
 ```
 
 ## Arguments

@@ -247,7 +247,7 @@ domain: "Specialized Domain"
 focus: "specific-focus-area"
 auto-activation-keywords: ["keyword1", "keyword2"]
 file-patterns: ["*.jsx", "*.tsx"]
-commands: ["/gd:implement", "/gd:build"]
+commands: ["/wd:implement", "/wd:build"]
 mcp-servers: ["magic", "context7"]
 ---
 

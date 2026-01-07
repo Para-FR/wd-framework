@@ -6,16 +6,18 @@ complexity-threshold: 0.7
 performance-profile: complex
 personas: [architect, analyzer, project-manager]
 mcp-servers: [sequential, context7]
+supports-yolo: true
+supports-progressive-disclosure: true
 ---
 
-# /gd:task - Enhanced Task Management
+# /wd:task - Enhanced Task Management
 
 ## Purpose
 Execute complex tasks with intelligent workflow management, cross-session persistence, hierarchical task organization, and advanced orchestration capabilities.
 
 ## Usage
 ```
-/gd:task [action] [target] [--strategy systematic|agile|enterprise] [--persist] [--hierarchy] [--delegate]
+/wd:task [action] [target] [--strategy systematic|agile|enterprise] [--persist] [--hierarchy] [--delegate]
 ```
 
 ## Actions
@@ -80,6 +82,30 @@ Execute complex tasks with intelligent workflow management, cross-session persis
 - **Historical Analytics**: Task execution history and learning
 - **Recovery Mechanisms**: Automatic recovery from interruptions
 
+### Session Frontmatter Tracking
+Tasks maintain state across sessions via frontmatter:
+```yaml
+task: implement-auth
+current_step: 3
+total_steps: 7
+status: in_progress
+context: ["auth_patterns", "security_requirements"]
+last_checkpoint: 2024-01-07T10:30:00Z
+```
+
+### YOLO Mode
+When `--yolo` enabled:
+- Auto-advance through non-critical steps
+- Skip explanation generation
+- Direct implementation path
+- Security gates still enforced
+
+### Progressive Disclosure
+- Step-by-step execution (no skipping)
+- Checkpoint gates require confirmation
+- Context accumulates across steps
+- Story file authority maintained
+
 ### Quality Gates and Validation
 - **Evidence Collection**: Systematic evidence gathering during execution
 - **Validation Criteria**: Customizable completion criteria
@@ -124,22 +150,22 @@ Execute complex tasks with intelligent workflow management, cross-session persis
 
 ### Create Project-Level Task Hierarchy
 ```
-/gd:task create "Implement user authentication system" --hierarchy --persist --strategy systematic
+/wd:task create "Implement user authentication system" --hierarchy --persist --strategy systematic
 ```
 
 ### Execute with Multi-Agent Delegation
 ```
-/gd:task execute AUTH-001 --delegate --wave-mode --validate
+/wd:task execute AUTH-001 --delegate --wave-mode --validate
 ```
 
 ### Analytics and Optimization
 ```
-/gd:task analytics --project AUTH --optimization-recommendations
+/wd:task analytics --project AUTH --optimization-recommendations
 ```
 
 ### Cross-Session Task Management
 ```
-/gd:task status --all-sessions --detailed-breakdown
+/wd:task status --all-sessions --detailed-breakdown
 ```
 
 ## Claude Code Integration
