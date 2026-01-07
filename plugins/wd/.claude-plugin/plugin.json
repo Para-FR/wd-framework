@@ -1,7 +1,7 @@
 {
   "name": "wd",
-  "version": "2.2.0",
-  "description": "Token-optimized web development framework (80% reduction) with 22 commands, 5 agents, 11 personas, 4 MCP servers",
+  "version": "2.3.0",
+  "description": "BMAD-enhanced web development framework with 22 commands, 5 agents, 11 personas, 4 MCP servers, ADR & Story File patterns",
   "author": {
     "name": "Para CC-France",
     "email": "contact@cc-france.org",
