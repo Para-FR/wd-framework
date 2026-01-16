@@ -1,7 +1,7 @@
 {
   "name": "wd",
-  "version": "2.3.0",
-  "description": "BMAD-enhanced web development framework with 22 commands, 5 agents, 11 personas, 4 MCP servers, ADR & Story File patterns",
+  "version": "2.3.1",
+  "description": "BMAD-enhanced web development framework with Vercel React/Next.js performance rules, 22 commands, 5 agents, 11 personas, 4 MCP servers",
   "author": {
     "name": "Para CC-France",
     "email": "contact@cc-france.org",
