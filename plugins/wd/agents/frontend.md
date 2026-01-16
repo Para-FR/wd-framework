@@ -186,6 +186,172 @@ Specialized agent for UI/UX development with modern frameworks, accessibility co
    - Image lazy loading
    - Code splitting by route
 
+## React & Next.js Performance Rules
+
+*Based on [Vercel Agent Skills](https://github.com/vercel-labs/agent-skills)*
+
+### 1. Eliminating Waterfalls (CRITICAL)
+
+| Rule | Pattern |
+|------|---------|
+| **Promise.all()** | Execute independent async ops concurrently |
+| **Defer await** | Move `await` into branches where actually used |
+| **API Route parallel** | Start independent ops immediately, await later |
+| **Suspense boundaries** | Show wrapper UI faster while data streams |
+
+```typescript
+// ❌ Sequential (slow)
+const user = await fetchUser()
+const posts = await fetchPosts()
+
+// ✅ Parallel (2-10× faster)
+const [user, posts] = await Promise.all([fetchUser(), fetchPosts()])
+```
+
+### 2. Bundle Size (CRITICAL)
+
+| Rule | Impact |
+|------|--------|
+| **Avoid barrel imports** | Direct imports save 200-800ms |
+| **Dynamic imports** | `next/dynamic` for heavy components |
+| **Defer non-critical libs** | Lazy-load analytics after hydration |
+| **Preload on intent** | Preload on hover/focus before click |
+
+```typescript
+// ❌ Loads 1,583 modules
+import { Check, X } from 'lucide-react'
+
+// ✅ Direct imports (3 modules)
+import Check from 'lucide-react/dist/esm/icons/check'
+
+// ✅ Or use next.config.js
+experimental: { optimizePackageImports: ['lucide-react'] }
+
+// ✅ Dynamic import for heavy components
+const Monaco = dynamic(() => import('./monaco'), { ssr: false })
+```
+
+### 3. Server-Side Performance (HIGH)
+
+| Rule | Pattern |
+|------|---------|
+| **LRU caching** | Cache across sequential requests |
+| **Minimize serialization** | Only pass fields client uses |
+| **Parallel data fetching** | Components fetch independently |
+| **React.cache()** | Deduplicate within single request |
+| **after()** | Schedule work after response sent |
+
+```tsx
+// ❌ Serializes all 50 fields
+return <Profile user={user} />
+
+// ✅ Serializes only used field
+return <Profile name={user.name} />
+
+// ✅ Parallel fetching - both fetch simultaneously
+export default function Page() {
+  return <><Header /><Sidebar /></>  // Each async component fetches independently
+}
+```
+
+### 4. Re-render Optimization (MEDIUM)
+
+| Rule | Pattern |
+|------|---------|
+| **Defer state reads** | Read in callbacks, not subscription |
+| **Memoize components** | Extract expensive work for early returns |
+| **Narrow dependencies** | Use `user.id` not `user` in deps |
+| **Derived state** | Use boolean instead of continuous values |
+| **Functional setState** | Prevents stale closures |
+| **Lazy state init** | Pass function to useState |
+| **Transitions** | Mark frequent updates as non-blocking |
+
+```tsx
+// ❌ Subscribes to all changes
+const searchParams = useSearchParams()
+const handleShare = () => shareChat({ ref: searchParams.get('ref') })
+
+// ✅ Reads on demand
+const handleShare = () => {
+  const params = new URLSearchParams(window.location.search)
+  shareChat({ ref: params.get('ref') })
+}
+
+// ❌ Runs every render
+const [index] = useState(buildSearchIndex(items))
+
+// ✅ Runs only once
+const [index] = useState(() => buildSearchIndex(items))
+```
+
+### 5. Rendering Performance (MEDIUM)
+
+| Rule | Pattern |
+|------|---------|
+| **content-visibility** | Defer off-screen rendering (10× faster) |
+| **Hoist static JSX** | Extract outside component |
+| **SVG wrapper animation** | Wrap in div for GPU acceleration |
+| **Activity component** | Preserve state for toggled components |
+| **Explicit conditionals** | Use ternary to avoid rendering falsy |
+
+```css
+/* ✅ 10× faster for long lists */
+.message-item {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 80px;
+}
+```
+
+```tsx
+// ❌ Recreates every render
+function Container() { return loading && <div className="skeleton" /> }
+
+// ✅ Reuses same element
+const skeleton = <div className="skeleton" />
+function Container() { return loading && skeleton }
+
+// ❌ Renders "0" when count = 0
+{count && <Badge>{count}</Badge>}
+
+// ✅ Renders nothing
+{count > 0 ? <Badge>{count}</Badge> : null}
+```
+
+### 6. JavaScript Performance (LOW-MEDIUM)
+
+| Rule | Pattern |
+|------|---------|
+| **Set/Map lookups** | O(1) vs Array.includes O(n) |
+| **Cache property access** | Store outside loop |
+| **Early return** | Skip unnecessary processing |
+| **Batch DOM changes** | Use class or cssText |
+| **toSorted()** | Immutable sorting prevents bugs |
+| **Hoist RegExp** | Create at module scope |
+
+```typescript
+// ❌ O(n) per check
+const allowed = ['a', 'b', 'c']
+items.filter(i => allowed.includes(i.id))
+
+// ✅ O(1) per check
+const allowed = new Set(['a', 'b', 'c'])
+items.filter(i => allowed.has(i.id))
+
+// ❌ Multiple reflows
+el.style.width = '100px'
+el.style.height = '200px'
+
+// ✅ Single reflow
+el.classList.add('highlighted-box')
+```
+
+### Performance Priority
+
+1. **CRITICAL**: Waterfalls (Promise.all), Bundle (barrels, dynamic imports)
+2. **HIGH**: Server-side (caching, serialization, parallel fetch)
+3. **MEDIUM**: Re-renders (memo, lazy init), Rendering (content-visibility)
+4. **LOW**: JS micro-optimizations (Set/Map, early return)
+
 ## BMAD Protocol Compliance
 
 ### Story File Authority
